@@ -654,7 +654,7 @@
     }
 
     .car-card:first-child .car-img-wrap {
-      aspect-ratio: 16/9;
+      aspect-ratio: 4/3;
     }
 
     .car-img-wrap img {
@@ -1819,7 +1819,7 @@
       /* Vehicles */
       .vehicles-grid { grid-template-columns: 1fr; gap: 16px; }
       .car-card:first-child { grid-column: auto; }
-      .car-card:first-child .car-img-wrap { aspect-ratio: 16/9; }
+      .car-card:first-child .car-img-wrap { aspect-ratio: 4/3; }
       .car-card:first-child .car-model { font-size: 20px; }
       .car-card:first-child .car-price { font-size: 22px; }
       .vehicles-header { flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 32px; }
@@ -1937,15 +1937,15 @@
     .gal-slide img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      transition: transform 0.7s ease;
+      object-fit: contain;
+      background: var(--black);
       display: block;
       user-select: none;
       -webkit-user-drag: none;
     }
 
     .car-card:hover .gal-slide img {
-      transform: scale(1.06);
+      transform: none;
     }
 
     .gal-arrow {
@@ -2111,7 +2111,10 @@
 <section class="hero" id="inicio">
   <div class="hero-video-wrap">
     <!-- Using a premium Cloudinary sample video for cars -->
-    <video id="heroVideo" autoplay muted loop playsinline preload="auto" disablepictureinpicture>
+    <video id="heroVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture x-webkit-airplay="deny" tabindex="-1">
+      <!-- Mobile: versión liviana 720p -->
+      <source media="(max-width: 768px)" src="https://res.cloudinary.com/dpiavcukm/video/upload/w_720,f_auto,q_auto:eco,ac_none,vc_h264/v1781669793/insta_video_85330_zttade.mp4" type="video/mp4" />
+      <!-- Desktop: 1080p -->
       <source src="https://res.cloudinary.com/dpiavcukm/video/upload/w_1080,f_auto,q_auto:eco,ac_none/v1781669793/insta_video_85330_zttade.mp4" type="video/mp4" />
     </video>
   </div>
@@ -3316,11 +3319,46 @@
   const loader = document.getElementById('loader');
   const heroVideo = document.getElementById('heroVideo');
 
-  // Video liviano único (w_1080, q_auto:eco, sin audio) para reproducción
-  // instantánea en todos los dispositivos, sin doble descarga ni swap de fuente.
+  // ── Mobile autoplay bulletproof ──────────────────────────────
+  // iOS Safari: requiere muted + playsinline + llamado en gesto o DOMContentLoaded.
+  // Estrategia: intentar play() inmediatamente; si falla por NotAllowedError,
+  // escuchar el primer tap/click del usuario para desbloquear.
 
-  // Force play immediately (needed on iOS/Android)
-  heroVideo.play().catch(() => {});
+  function attemptVideoPlay() {
+    const p = heroVideo.play();
+    if (p !== undefined) {
+      p.catch(err => {
+        if (err.name === 'NotAllowedError') {
+          const resumeOnGesture = () => {
+            heroVideo.play().catch(() => {});
+            document.removeEventListener('touchstart', resumeOnGesture);
+            document.removeEventListener('click', resumeOnGesture);
+          };
+          document.addEventListener('touchstart', resumeOnGesture, { once: true, passive: true });
+          document.addEventListener('click', resumeOnGesture, { once: true });
+        }
+      });
+    }
+  }
+
+  // Asegurar atributos críticos por JS (iOS parser a veces los ignora)
+  heroVideo.muted = true;
+  heroVideo.setAttribute('muted', '');
+  heroVideo.setAttribute('playsinline', '');
+  heroVideo.setAttribute('webkit-playsinline', '');
+
+  // En mobile, forzar la fuente liviana 720p antes de cargar
+  if (window.innerWidth <= 768) {
+    heroVideo.querySelectorAll('source').forEach(s => s.remove());
+    const mobileSource = document.createElement('source');
+    mobileSource.src = 'https://res.cloudinary.com/dpiavcukm/video/upload/w_720,f_auto,q_auto:eco,ac_none,vc_h264/v1781669793/insta_video_85330_zttade.mp4';
+    mobileSource.type = 'video/mp4';
+    heroVideo.appendChild(mobileSource);
+    heroVideo.load();
+  }
+
+  attemptVideoPlay();
+  heroVideo.addEventListener('loadedmetadata', attemptVideoPlay, { once: true });
 
   gsap.to(loaderLogo, { opacity: 1, duration: 0.6, delay: 0.2, ease: 'power2.out' });
   setTimeout(() => { loaderBar.style.width = '100%'; }, 100);
@@ -3335,9 +3373,11 @@
     });
   }
 
-  // Hide as soon as video can play — fallback after 1500ms
+  // Hide as soon as video can play — fallback más agresivo en mobile
+  const loaderTimeout = window.innerWidth <= 768 ? 2000 : 1500;
   heroVideo.addEventListener('canplay', hideLoader, { once: true });
-  setTimeout(hideLoader, 1500);
+  heroVideo.addEventListener('loadeddata', hideLoader, { once: true });
+  setTimeout(hideLoader, loaderTimeout);
 
   // ============================================================
   // NAV
