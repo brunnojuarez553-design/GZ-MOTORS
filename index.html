@@ -650,11 +650,11 @@
     .car-img-wrap {
       position: relative;
       overflow: hidden;
-      aspect-ratio: 16/9;
+      aspect-ratio: 4/3;
     }
 
     .car-card:first-child .car-img-wrap {
-      aspect-ratio: 21/9;
+      aspect-ratio: 16/9;
     }
 
     .car-img-wrap img {
@@ -1928,40 +1928,24 @@
     }
 
     .gal-slide {
-      position: relative;
       min-width: 100%;
       height: 100%;
       flex-shrink: 0;
       overflow: hidden;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .gal-slide::before {
-      content: '';
-      position: absolute;
-      inset: -20px;
-      background-image: inherit;
-      background-size: cover;
-      background-position: center;
-      filter: blur(28px) brightness(0.45) saturate(1.15);
-      transform: scale(1.15);
-      z-index: 0;
     }
 
     .gal-slide img {
-      position: relative;
-      z-index: 1;
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
+      transition: transform 0.7s ease;
       display: block;
       user-select: none;
       -webkit-user-drag: none;
     }
 
     .car-card:hover .gal-slide img {
-      transform: none;
+      transform: scale(1.06);
     }
 
     .gal-arrow {
@@ -2128,8 +2112,7 @@
   <div class="hero-video-wrap">
     <!-- Using a premium Cloudinary sample video for cars -->
     <video id="heroVideo" autoplay muted loop playsinline preload="auto" disablepictureinpicture>
-      <source media="(max-width: 768px)" src="https://res.cloudinary.com/dpiavcukm/video/upload/w_720,f_auto,q_auto:low,ac_none/v1781669793/insta_video_85330_zttade.mp4" type="video/mp4" />
-      <source src="https://res.cloudinary.com/dpiavcukm/video/upload/f_auto,q_auto:good/v1781669793/insta_video_85330_zttade.mp4" type="video/mp4" />
+      <source src="https://res.cloudinary.com/dpiavcukm/video/upload/w_1080,f_auto,q_auto:eco,ac_none/v1781669793/insta_video_85330_zttade.mp4" type="video/mp4" />
     </video>
   </div>
   <div class="hero-overlay"></div>
@@ -2284,22 +2267,22 @@
         <div class="car-img-wrap" style="position:relative;overflow:hidden;">
           <!-- Galería deslizable -->
           <div class="gal-track" id="galTrack0">
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671442/IMG_7775_opkmvg.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671442/IMG_7775_opkmvg.png" alt="BMW X4 xDrive30i 2022 - foto 1" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671467/IMG_7776_ggith9.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671467/IMG_7776_ggith9.png" alt="BMW X4 xDrive30i 2022 - foto 2" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671453/IMG_7777_fgjwuc.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671453/IMG_7777_fgjwuc.png" alt="BMW X4 xDrive30i 2022 - foto 3" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671471/IMG_7778_yjruwp.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671471/IMG_7778_yjruwp.png" alt="BMW X4 xDrive30i 2022 - foto 4" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671486/IMG_7779_qirzlj.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671486/IMG_7779_qirzlj.png" alt="BMW X4 xDrive30i 2022 - foto 5" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671497/IMG_7780_zachvx.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671497/IMG_7780_zachvx.png" alt="BMW X4 xDrive30i 2022 - foto 6" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671490/IMG_7781_exkcde.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671490/IMG_7781_exkcde.png" alt="BMW X4 xDrive30i 2022 - foto 7" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671512/IMG_7782_hmbf5o.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671512/IMG_7782_hmbf5o.png" alt="BMW X4 xDrive30i 2022 - foto 8" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671528/IMG_7783_faikgk.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671528/IMG_7783_faikgk.png" alt="BMW X4 xDrive30i 2022 - foto 9" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671545/IMG_7784_gwo7h2.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671545/IMG_7784_gwo7h2.png" alt="BMW X4 xDrive30i 2022 - foto 10" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671523/IMG_7785_jjk3kx.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671523/IMG_7785_jjk3kx.png" alt="BMW X4 xDrive30i 2022 - foto 11" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671536/IMG_7788_wd6wv6.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671536/IMG_7788_wd6wv6.png" alt="BMW X4 xDrive30i 2022 - foto 12" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671516/IMG_7786_mnosvx.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671516/IMG_7786_mnosvx.png" alt="BMW X4 xDrive30i 2022 - foto 13" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671578/IMG_7790_sthnkz.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671578/IMG_7790_sthnkz.png" alt="BMW X4 xDrive30i 2022 - foto 14" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671556/IMG_7791_trrlle.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671556/IMG_7791_trrlle.png" alt="BMW X4 xDrive30i 2022 - foto 15" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671586/IMG_7792_weajtv.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671586/IMG_7792_weajtv.png" alt="BMW X4 xDrive30i 2022 - foto 16" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671442/IMG_7775_opkmvg.png" alt="BMW X4 xDrive30i 2022 - foto 1" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671467/IMG_7776_ggith9.png" alt="BMW X4 xDrive30i 2022 - foto 2" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671453/IMG_7777_fgjwuc.png" alt="BMW X4 xDrive30i 2022 - foto 3" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671471/IMG_7778_yjruwp.png" alt="BMW X4 xDrive30i 2022 - foto 4" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671486/IMG_7779_qirzlj.png" alt="BMW X4 xDrive30i 2022 - foto 5" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671497/IMG_7780_zachvx.png" alt="BMW X4 xDrive30i 2022 - foto 6" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671490/IMG_7781_exkcde.png" alt="BMW X4 xDrive30i 2022 - foto 7" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671512/IMG_7782_hmbf5o.png" alt="BMW X4 xDrive30i 2022 - foto 8" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671528/IMG_7783_faikgk.png" alt="BMW X4 xDrive30i 2022 - foto 9" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671545/IMG_7784_gwo7h2.png" alt="BMW X4 xDrive30i 2022 - foto 10" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671523/IMG_7785_jjk3kx.png" alt="BMW X4 xDrive30i 2022 - foto 11" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671536/IMG_7788_wd6wv6.png" alt="BMW X4 xDrive30i 2022 - foto 12" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671516/IMG_7786_mnosvx.png" alt="BMW X4 xDrive30i 2022 - foto 13" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671578/IMG_7790_sthnkz.png" alt="BMW X4 xDrive30i 2022 - foto 14" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671556/IMG_7791_trrlle.png" alt="BMW X4 xDrive30i 2022 - foto 15" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671586/IMG_7792_weajtv.png" alt="BMW X4 xDrive30i 2022 - foto 16" loading="lazy" /></div>
           </div>
           <!-- Flechas galería -->
           <button class="gal-arrow gal-prev" onclick="galMove(0,-1)" aria-label="Foto anterior">&#8249;</button>
@@ -2377,25 +2360,25 @@
       <div class="car-card reveal">
         <div class="car-img-wrap" style="position:relative;overflow:hidden;">
           <div class="gal-track" id="galTrack1">
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671316/IMG_7740_keonw1.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671316/IMG_7740_keonw1.png" alt="foto 1" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671299/IMG_7741_dzre12.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671299/IMG_7741_dzre12.png" alt="foto 2" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671304/IMG_7742_kwhzfr.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671304/IMG_7742_kwhzfr.png" alt="foto 3" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671319/IMG_7743_dbjux0.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671319/IMG_7743_dbjux0.png" alt="foto 4" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671336/IMG_7744_ntytmc.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671336/IMG_7744_ntytmc.png" alt="foto 5" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671308/IMG_7745_spxbcb.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671308/IMG_7745_spxbcb.png" alt="foto 6" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671323/IMG_7746_jp9zhk.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671323/IMG_7746_jp9zhk.png" alt="foto 7" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671340/IMG_7747_kx6yvw.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671340/IMG_7747_kx6yvw.png" alt="foto 8" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671312/IMG_7748_rdqhdq.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671312/IMG_7748_rdqhdq.png" alt="foto 9" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671328/IMG_7749_t8v91s.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671328/IMG_7749_t8v91s.png" alt="foto 10" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671351/IMG_7750_rxcsvx.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671351/IMG_7750_rxcsvx.png" alt="foto 11" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671332/IMG_7751_fdbwlq.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671332/IMG_7751_fdbwlq.png" alt="foto 12" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671343/IMG_7752_b2wwai.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671343/IMG_7752_b2wwai.png" alt="foto 13" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671362/IMG_7753_iqnk0g.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671362/IMG_7753_iqnk0g.png" alt="foto 14" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671347/IMG_7754_fjefux.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671347/IMG_7754_fjefux.png" alt="foto 15" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671366/IMG_7755_lt7snc.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671366/IMG_7755_lt7snc.png" alt="foto 16" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671355/IMG_7756_jsfcyc.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671355/IMG_7756_jsfcyc.png" alt="foto 17" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671373/IMG_7757_wu5099.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671373/IMG_7757_wu5099.png" alt="foto 18" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671359/IMG_7758_zrgk3k.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671359/IMG_7758_zrgk3k.png" alt="foto 19" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671316/IMG_7740_keonw1.png" alt="foto 1" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671299/IMG_7741_dzre12.png" alt="foto 2" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671304/IMG_7742_kwhzfr.png" alt="foto 3" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671319/IMG_7743_dbjux0.png" alt="foto 4" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671336/IMG_7744_ntytmc.png" alt="foto 5" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671308/IMG_7745_spxbcb.png" alt="foto 6" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671323/IMG_7746_jp9zhk.png" alt="foto 7" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671340/IMG_7747_kx6yvw.png" alt="foto 8" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671312/IMG_7748_rdqhdq.png" alt="foto 9" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671328/IMG_7749_t8v91s.png" alt="foto 10" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671351/IMG_7750_rxcsvx.png" alt="foto 11" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671332/IMG_7751_fdbwlq.png" alt="foto 12" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671343/IMG_7752_b2wwai.png" alt="foto 13" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671362/IMG_7753_iqnk0g.png" alt="foto 14" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671347/IMG_7754_fjefux.png" alt="foto 15" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671366/IMG_7755_lt7snc.png" alt="foto 16" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671355/IMG_7756_jsfcyc.png" alt="foto 17" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671373/IMG_7757_wu5099.png" alt="foto 18" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671359/IMG_7758_zrgk3k.png" alt="foto 19" loading="lazy" /></div>
           </div>
           <button class="gal-arrow gal-prev" onclick="galMove(1,-1)" aria-label="Anterior">&#8249;</button>
           <button class="gal-arrow gal-next" onclick="galMove(1,1)" aria-label="Siguiente">&#8250;</button>
@@ -2462,22 +2445,22 @@
       <div class="car-card reveal">
         <div class="car-img-wrap" style="position:relative;overflow:hidden;">
           <div class="gal-track" id="galTrack2">
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671376/IMG_7759_iiggke.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671376/IMG_7759_iiggke.png" alt="foto 1" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671369/IMG_7760_hnxm9o.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671369/IMG_7760_hnxm9o.png" alt="foto 2" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671379/IMG_7761_rd1bm2.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671379/IMG_7761_rd1bm2.png" alt="foto 3" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671386/IMG_7762_vrnrmr.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671386/IMG_7762_vrnrmr.png" alt="foto 4" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671381/IMG_7763_cm8o1y.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671381/IMG_7763_cm8o1y.png" alt="foto 5" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671389/IMG_7764_lwtnrt.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671389/IMG_7764_lwtnrt.png" alt="foto 6" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671404/IMG_7765_evb6wz.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671404/IMG_7765_evb6wz.png" alt="foto 7" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671393/IMG_7766_mptjel.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671393/IMG_7766_mptjel.png" alt="foto 8" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671397/IMG_7767_leot3g.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671397/IMG_7767_leot3g.png" alt="foto 9" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671401/IMG_7768_tebvsm.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671401/IMG_7768_tebvsm.png" alt="foto 10" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671416/IMG_7769_ldcjzv.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671416/IMG_7769_ldcjzv.png" alt="foto 11" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671428/IMG_7770_nrtsxo.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671428/IMG_7770_nrtsxo.png" alt="foto 12" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671424/IMG_7771_gufwq3.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671424/IMG_7771_gufwq3.png" alt="foto 13" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671432/IMG_7772_bcjqrz.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671432/IMG_7772_bcjqrz.png" alt="foto 14" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671420/IMG_7773_wjfazq.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671420/IMG_7773_wjfazq.png" alt="foto 15" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671435/IMG_7774_nonkrw.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671435/IMG_7774_nonkrw.png" alt="foto 16" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671376/IMG_7759_iiggke.png" alt="foto 1" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671369/IMG_7760_hnxm9o.png" alt="foto 2" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671379/IMG_7761_rd1bm2.png" alt="foto 3" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671386/IMG_7762_vrnrmr.png" alt="foto 4" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671381/IMG_7763_cm8o1y.png" alt="foto 5" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671389/IMG_7764_lwtnrt.png" alt="foto 6" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671404/IMG_7765_evb6wz.png" alt="foto 7" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671393/IMG_7766_mptjel.png" alt="foto 8" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671397/IMG_7767_leot3g.png" alt="foto 9" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671401/IMG_7768_tebvsm.png" alt="foto 10" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671416/IMG_7769_ldcjzv.png" alt="foto 11" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671428/IMG_7770_nrtsxo.png" alt="foto 12" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671424/IMG_7771_gufwq3.png" alt="foto 13" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671432/IMG_7772_bcjqrz.png" alt="foto 14" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671420/IMG_7773_wjfazq.png" alt="foto 15" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671435/IMG_7774_nonkrw.png" alt="foto 16" loading="lazy" /></div>
           </div>
           <button class="gal-arrow gal-prev" onclick="galMove(2,-1)" aria-label="Anterior">&#8249;</button>
           <button class="gal-arrow gal-next" onclick="galMove(2,1)" aria-label="Siguiente">&#8250;</button>
@@ -2543,26 +2526,26 @@
       <div class="car-card reveal">
         <div class="car-img-wrap" style="position:relative;overflow:hidden;">
           <div class="gal-track" id="galTrack3">
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671426/IMG_7796_oe3gxw.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671426/IMG_7796_oe3gxw.png" alt="Mercedes-Benz GLB 250 2020 - foto 1" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671439/IMG_7797_rxm4bb.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671439/IMG_7797_rxm4bb.png" alt="Mercedes-Benz GLB 250 2020 - foto 2" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671407/IMG_7798_j1nlgu.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671407/IMG_7798_j1nlgu.png" alt="Mercedes-Benz GLB 250 2020 - foto 3" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671411/IMG_7799_umitsu.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671411/IMG_7799_umitsu.png" alt="Mercedes-Benz GLB 250 2020 - foto 4" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671449/IMG_7800_dixxuy.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671449/IMG_7800_dixxuy.png" alt="Mercedes-Benz GLB 250 2020 - foto 5" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671463/IMG_7801_stsrwu.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671463/IMG_7801_stsrwu.png" alt="Mercedes-Benz GLB 250 2020 - foto 6" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671459/IMG_7802_pamdun.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671459/IMG_7802_pamdun.png" alt="Mercedes-Benz GLB 250 2020 - foto 7" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671475/IMG_7803_afuwzl.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671475/IMG_7803_afuwzl.png" alt="Mercedes-Benz GLB 250 2020 - foto 8" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671445/IMG_7804_qzjoil.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671445/IMG_7804_qzjoil.png" alt="Mercedes-Benz GLB 250 2020 - foto 9" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671479/IMG_7805_awpenn.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671479/IMG_7805_awpenn.png" alt="Mercedes-Benz GLB 250 2020 - foto 10" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671482/IMG_7806_tdfolb.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671482/IMG_7806_tdfolb.png" alt="Mercedes-Benz GLB 250 2020 - foto 11" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671505/IMG_7807_nnmrwt.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671505/IMG_7807_nnmrwt.png" alt="Mercedes-Benz GLB 250 2020 - foto 12" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671541/IMG_7808_uaipwr.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671541/IMG_7808_uaipwr.png" alt="Mercedes-Benz GLB 250 2020 - foto 13" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671582/IMG_7809_ojqqtr.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671582/IMG_7809_ojqqtr.png" alt="Mercedes-Benz GLB 250 2020 - foto 14" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671509/IMG_7810_xopxgb.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671509/IMG_7810_xopxgb.png" alt="Mercedes-Benz GLB 250 2020 - foto 15" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671501/IMG_7811_uguhf2.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671501/IMG_7811_uguhf2.png" alt="Mercedes-Benz GLB 250 2020 - foto 16" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671532/IMG_7812_xuesu2.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671532/IMG_7812_xuesu2.png" alt="Mercedes-Benz GLB 250 2020 - foto 17" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671493/IMG_7813_kajbmk.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671493/IMG_7813_kajbmk.png" alt="Mercedes-Benz GLB 250 2020 - foto 18" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671520/IMG_7814_ltaxaf.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671520/IMG_7814_ltaxaf.png" alt="Mercedes-Benz GLB 250 2020 - foto 19" loading="lazy" /></div>
-          <div class="gal-slide" style="background-image:url('https://res.cloudinary.com/dpiavcukm/image/upload/v1781671563/IMG_7815_chowdq.png')"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671563/IMG_7815_chowdq.png" alt="Mercedes-Benz GLB 250 2020 - foto 20" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671426/IMG_7796_oe3gxw.png" alt="Mercedes-Benz GLB 250 2020 - foto 1" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671439/IMG_7797_rxm4bb.png" alt="Mercedes-Benz GLB 250 2020 - foto 2" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671407/IMG_7798_j1nlgu.png" alt="Mercedes-Benz GLB 250 2020 - foto 3" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671411/IMG_7799_umitsu.png" alt="Mercedes-Benz GLB 250 2020 - foto 4" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671449/IMG_7800_dixxuy.png" alt="Mercedes-Benz GLB 250 2020 - foto 5" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671463/IMG_7801_stsrwu.png" alt="Mercedes-Benz GLB 250 2020 - foto 6" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671459/IMG_7802_pamdun.png" alt="Mercedes-Benz GLB 250 2020 - foto 7" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671475/IMG_7803_afuwzl.png" alt="Mercedes-Benz GLB 250 2020 - foto 8" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671445/IMG_7804_qzjoil.png" alt="Mercedes-Benz GLB 250 2020 - foto 9" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671479/IMG_7805_awpenn.png" alt="Mercedes-Benz GLB 250 2020 - foto 10" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671482/IMG_7806_tdfolb.png" alt="Mercedes-Benz GLB 250 2020 - foto 11" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671505/IMG_7807_nnmrwt.png" alt="Mercedes-Benz GLB 250 2020 - foto 12" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671541/IMG_7808_uaipwr.png" alt="Mercedes-Benz GLB 250 2020 - foto 13" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671582/IMG_7809_ojqqtr.png" alt="Mercedes-Benz GLB 250 2020 - foto 14" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671509/IMG_7810_xopxgb.png" alt="Mercedes-Benz GLB 250 2020 - foto 15" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671501/IMG_7811_uguhf2.png" alt="Mercedes-Benz GLB 250 2020 - foto 16" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671532/IMG_7812_xuesu2.png" alt="Mercedes-Benz GLB 250 2020 - foto 17" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671493/IMG_7813_kajbmk.png" alt="Mercedes-Benz GLB 250 2020 - foto 18" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671520/IMG_7814_ltaxaf.png" alt="Mercedes-Benz GLB 250 2020 - foto 19" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671563/IMG_7815_chowdq.png" alt="Mercedes-Benz GLB 250 2020 - foto 20" loading="lazy" /></div>
           </div>
           <button class="gal-arrow gal-prev" onclick="galMove(3,-1)" aria-label="Anterior">&#8249;</button>
           <button class="gal-arrow gal-next" onclick="galMove(3,1)" aria-label="Siguiente">&#8250;</button>
@@ -3333,8 +3316,8 @@
   const loader = document.getElementById('loader');
   const heroVideo = document.getElementById('heroVideo');
 
-  // La fuente liviana para mobile ya se elige en el HTML via <source media="(max-width:768px)">,
-  // así el navegador la descarga directo sin doble fetch.
+  // Video liviano único (w_1080, q_auto:eco, sin audio) para reproducción
+  // instantánea en todos los dispositivos, sin doble descarga ni swap de fuente.
 
   // Force play immediately (needed on iOS/Android)
   heroVideo.play().catch(() => {});
