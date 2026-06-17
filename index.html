@@ -234,7 +234,7 @@
 
     .mobile-menu a {
       font-family: var(--font-display);
-      font-size: clamp(28px, 8vw, 48px);
+      font-size: clamp(18px, 5vw, 26px);
       font-weight: 700;
       letter-spacing: 0.04em;
       color: var(--white);
@@ -1690,6 +1690,35 @@
       text-decoration: none;
     }
 
+    .wa-float::before,
+    .wa-float::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 2px solid rgba(37,211,102,0.6);
+      z-index: -1;
+      animation: waPulseRing 2.6s cubic-bezier(0.4,0,0.6,1) infinite;
+    }
+
+    .wa-float::after {
+      animation-delay: 1.3s;
+    }
+
+    @keyframes waPulseRing {
+      0%   { transform: scale(1);   opacity: 0.7; }
+      100% { transform: scale(1.9); opacity: 0; }
+    }
+
+    .wa-float svg {
+      animation: waIconBreathe 2.6s ease-in-out infinite;
+    }
+
+    @keyframes waIconBreathe {
+      0%, 100% { transform: scale(1); }
+      50%      { transform: scale(1.12); }
+    }
+
     .wa-float:hover {
       transform: scale(1.1);
       box-shadow: 0 12px 40px rgba(37,211,102,0.5);
@@ -1907,10 +1936,15 @@
     .gal-slide img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      background: var(--black);
       display: block;
       user-select: none;
       -webkit-user-drag: none;
+    }
+
+    .car-card:hover .gal-slide img {
+      transform: none;
     }
 
     .gal-arrow {
@@ -2076,8 +2110,8 @@
 <section class="hero" id="inicio">
   <div class="hero-video-wrap">
     <!-- Using a premium Cloudinary sample video for cars -->
-    <video autoplay muted loop playsinline preload="auto">
-      <source src="https://res.cloudinary.com/dpiavcukm/video/upload/v1781669793/insta_video_85330_zttade.mp4" type="video/mp4" />
+    <video id="heroVideo" autoplay muted loop playsinline preload="auto" disablepictureinpicture>
+      <source src="https://res.cloudinary.com/dpiavcukm/video/upload/f_auto,q_auto:good/v1781669793/insta_video_85330_zttade.mp4" type="video/mp4" />
     </video>
   </div>
   <div class="hero-overlay"></div>
@@ -2142,22 +2176,26 @@
       <div class="search-grid">
         <div class="field-group">
           <label>Marca</label>
-          <select id="s-marca">
+          <select id="s-marca" onchange="toggleOtro(this,'s-marca-otro')">
             <option value="">Todas las marcas</option>
             <option>BMW</option><option>Mercedes-Benz</option>
             <option>Audi</option><option>Infiniti</option>
             <option>Volvo</option><option>Lexus</option>
             <option>Porsche</option><option>Land Rover</option>
+            <option value="Otro">Otra marca…</option>
           </select>
+          <input type="text" id="s-marca-otro" placeholder="Escribí la marca" style="display:none;" />
         </div>
         <div class="field-group">
           <label>Modelo</label>
-          <select id="s-modelo">
+          <select id="s-modelo" onchange="toggleOtro(this,'s-modelo-otro')">
             <option value="">Todos los modelos</option>
             <option>Serie 3</option><option>X5</option>
             <option>GLC</option><option>A4</option>
             <option>Q60</option><option>XC60</option>
+            <option value="Otro">Otro modelo…</option>
           </select>
+          <input type="text" id="s-modelo-otro" placeholder="Escribí el modelo" style="display:none;" />
         </div>
         <div class="field-group">
           <label>Año</label>
@@ -3257,6 +3295,12 @@
 <!-- ============================================================
   FLOATING WA
 ============================================================ -->
+<a href="https://wa.me/528136200151?text=Hola!%20Vi%20su%20web%20y%20quiero%20más%20información." target="_blank" class="wa-float" aria-label="Escribinos por WhatsApp">
+  <svg viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.124 1.523 5.86L.038 23.5l5.8-1.521A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.66-.504-5.19-1.385l-.372-.22-3.848 1.01 1.027-3.75-.242-.385A9.943 9.943 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a>
 
 
 <!-- ============================================================
@@ -3269,16 +3313,34 @@
   const loaderBar = document.getElementById('loaderBar');
   const loaderLogo = document.querySelector('.loader-logo');
   const loader = document.getElementById('loader');
+  const heroVideo = document.getElementById('heroVideo');
 
-  gsap.to(loaderLogo, { opacity: 1, duration: 0.6, delay: 0.3, ease: 'power2.out' });
-  setTimeout(() => { loaderBar.style.width = '100%'; }, 200);
+  // Swap to mobile-optimized source early
+  if (window.innerWidth <= 768) {
+    heroVideo.querySelector('source').src =
+      'https://res.cloudinary.com/dpiavcukm/video/upload/w_720,f_auto,q_auto:low,ac_none/v1781669793/insta_video_85330_zttade.mp4';
+    heroVideo.load();
+  }
 
-  setTimeout(() => {
+  // Force play immediately (needed on iOS/Android)
+  heroVideo.play().catch(() => {});
+
+  gsap.to(loaderLogo, { opacity: 1, duration: 0.6, delay: 0.2, ease: 'power2.out' });
+  setTimeout(() => { loaderBar.style.width = '100%'; }, 100);
+
+  let loaderDone = false;
+  function hideLoader() {
+    if (loaderDone) return;
+    loaderDone = true;
     gsap.to(loader, {
-      opacity: 0, duration: 0.6, ease: 'power2.inOut',
+      opacity: 0, duration: 0.5, ease: 'power2.inOut',
       onComplete: () => { loader.style.display = 'none'; initAnimations(); }
     });
-  }, 1800);
+  }
+
+  // Hide as soon as video can play — fallback after 1500ms
+  heroVideo.addEventListener('canplay', hideLoader, { once: true });
+  setTimeout(hideLoader, 1500);
 
   // ============================================================
   // NAV
@@ -3441,9 +3503,23 @@
     window.open(`https://wa.me/528136200151?text=${encodeURIComponent(msg)}`, '_blank');
   }
 
+  function toggleOtro(select, inputId) {
+    const input = document.getElementById(inputId);
+    if (!input) return;
+    if (select.value === 'Otro') {
+      input.style.display = '';
+      input.focus();
+    } else {
+      input.style.display = 'none';
+      input.value = '';
+    }
+  }
+
   function handleSearch() {
-    const marca = document.getElementById('s-marca').value;
-    const modelo = document.getElementById('s-modelo').value;
+    const marcaSel = document.getElementById('s-marca').value;
+    const modeloSel = document.getElementById('s-modelo').value;
+    const marca = marcaSel === 'Otro' ? document.getElementById('s-marca-otro').value.trim() : marcaSel;
+    const modelo = modeloSel === 'Otro' ? document.getElementById('s-modelo-otro').value.trim() : modeloSel;
     const anio = document.getElementById('s-anio').value;
     const precio = document.getElementById('s-precio').value;
     const km = document.getElementById('s-km').value;
