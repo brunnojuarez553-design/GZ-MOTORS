@@ -651,6 +651,8 @@
       position: relative;
       overflow: hidden;
       aspect-ratio: 4/3;
+      /* Necesario para gal-slide img con position:absolute */
+      isolation: isolate;
     }
 
     .car-card:first-child .car-img-wrap {
@@ -1924,21 +1926,26 @@
       display: flex;
       width: 100%;
       height: 100%;
-      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
     }
 
     .gal-slide {
+      flex: 0 0 100%;
+      width: 100%;
       min-width: 100%;
       height: 100%;
-      flex-shrink: 0;
       overflow: hidden;
+      position: relative;
     }
 
     .gal-slide img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      background: var(--black);
+      object-fit: cover;
+      object-position: center center;
       display: block;
       user-select: none;
       -webkit-user-drag: none;
@@ -2270,7 +2277,7 @@
         <div class="car-img-wrap" style="position:relative;overflow:hidden;">
           <!-- Galería deslizable -->
           <div class="gal-track" id="galTrack0">
-          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671442/IMG_7775_opkmvg.png" alt="BMW X4 xDrive30i 2022 - foto 1" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671442/IMG_7775_opkmvg.png" alt="BMW X4 xDrive30i 2022 - foto 1" loading="eager" /></div>
           <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671467/IMG_7776_ggith9.png" alt="BMW X4 xDrive30i 2022 - foto 2" loading="lazy" /></div>
           <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671453/IMG_7777_fgjwuc.png" alt="BMW X4 xDrive30i 2022 - foto 3" loading="lazy" /></div>
           <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671471/IMG_7778_yjruwp.png" alt="BMW X4 xDrive30i 2022 - foto 4" loading="lazy" /></div>
@@ -2363,7 +2370,7 @@
       <div class="car-card reveal">
         <div class="car-img-wrap" style="position:relative;overflow:hidden;">
           <div class="gal-track" id="galTrack1">
-          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671316/IMG_7740_keonw1.png" alt="foto 1" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671316/IMG_7740_keonw1.png" alt="foto 1" loading="eager" /></div>
           <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671299/IMG_7741_dzre12.png" alt="foto 2" loading="lazy" /></div>
           <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671304/IMG_7742_kwhzfr.png" alt="foto 3" loading="lazy" /></div>
           <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671319/IMG_7743_dbjux0.png" alt="foto 4" loading="lazy" /></div>
@@ -2448,7 +2455,7 @@
       <div class="car-card reveal">
         <div class="car-img-wrap" style="position:relative;overflow:hidden;">
           <div class="gal-track" id="galTrack2">
-          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671376/IMG_7759_iiggke.png" alt="foto 1" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671376/IMG_7759_iiggke.png" alt="foto 1" loading="eager" /></div>
           <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671369/IMG_7760_hnxm9o.png" alt="foto 2" loading="lazy" /></div>
           <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671379/IMG_7761_rd1bm2.png" alt="foto 3" loading="lazy" /></div>
           <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671386/IMG_7762_vrnrmr.png" alt="foto 4" loading="lazy" /></div>
@@ -2529,7 +2536,7 @@
       <div class="car-card reveal">
         <div class="car-img-wrap" style="position:relative;overflow:hidden;">
           <div class="gal-track" id="galTrack3">
-          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671426/IMG_7796_oe3gxw.png" alt="Mercedes-Benz GLB 250 2020 - foto 1" loading="lazy" /></div>
+          <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671426/IMG_7796_oe3gxw.png" alt="Mercedes-Benz GLB 250 2020 - foto 1" loading="eager" /></div>
           <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671439/IMG_7797_rxm4bb.png" alt="Mercedes-Benz GLB 250 2020 - foto 2" loading="lazy" /></div>
           <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671407/IMG_7798_j1nlgu.png" alt="Mercedes-Benz GLB 250 2020 - foto 3" loading="lazy" /></div>
           <div class="gal-slide"><img src="https://res.cloudinary.com/dpiavcukm/image/upload/v1781671411/IMG_7799_umitsu.png" alt="Mercedes-Benz GLB 250 2020 - foto 4" loading="lazy" /></div>
