@@ -9,7 +9,7 @@
   <meta property="og:title" content="GZ Motors | Concesionario Premium" />
   <meta property="og:description" content="Vehículos seleccionados, financiación personalizada y atención de primer nivel." />
   <meta property="og:type" content="website" />
-  <meta property="og:locale" content="es_CL" />
+  <meta property="og:locale" content="es_MX" />
 
   <!-- Schema Markup -->
   <script type="application/ld+json">
@@ -2663,7 +2663,7 @@
       <div class="stats-text reveal">
         <div class="section-label">Experiencia Premium</div>
         <h2 class="section-title">Más de una década<br />eligiendo lo mejor.</h2>
-        <p class="section-sub">Somos el referente en vehículos de lujo y alta gama en Santiago. Nuestra trayectoria habla por sí sola: clientes que vuelven y nos recomiendan.</p>
+        <p class="section-sub">Somos el referente en vehículos de lujo y alta gama en México. Nuestra trayectoria habla por sí sola: clientes que vuelven y nos recomiendan.</p>
         <a href="#contacto" class="btn-primary" style="margin-top:36px;display:inline-flex;">
           Conocer más →
         </a>
@@ -2949,8 +2949,8 @@
         <div class="testimonial-author">
           <div class="author-avatar">C</div>
           <div>
-            <div class="author-name">Cristóbal Muñoz</div>
-            <div class="author-meta">Santiago · BMW X3 2021</div>
+            <div class="author-name">Carlos Mendoza</div>
+            <div class="author-meta">Monterrey · BMW X3 2021</div>
           </div>
         </div>
       </div>
@@ -2962,7 +2962,7 @@
           <div class="author-avatar">M</div>
           <div>
             <div class="author-name">Marcela Fuentes</div>
-            <div class="author-meta">Las Condes · Audi Q5 2020</div>
+            <div class="author-meta">San Pedro Garza García · Audi Q5 2020</div>
           </div>
         </div>
       </div>
@@ -2974,7 +2974,7 @@
           <div class="author-avatar">R</div>
           <div>
             <div class="author-name">Rodrigo Espinoza</div>
-            <div class="author-meta">Vitacura · Porsche Cayenne 2022</div>
+            <div class="author-meta">Ciudad de México · Porsche Cayenne 2022</div>
           </div>
         </div>
       </div>
@@ -3441,12 +3441,13 @@
         trigger: counter,
         start: 'top 85%',
         onEnter: () => {
-          gsap.to({ val: 0 }, {
+          const obj = { val: 0 };
+          gsap.to(obj, {
             val: target,
             duration: 2,
             ease: 'power2.out',
             onUpdate: function() {
-              counter.textContent = Math.floor(this.targets()[0].val).toLocaleString('es-CL');
+              counter.textContent = Math.floor(obj.val).toLocaleString('es-MX');
             }
           });
         }
